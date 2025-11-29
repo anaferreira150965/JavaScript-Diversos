@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>NACIONALIDADE</h1>
+    Nacionalidade: <input type="text" name="nacio" id="nacio">
+    <input type="button" value="Verificar" onclick="verificar()"> 
+
+    <div id="res">
+
+    </div>
+
+  <script>
+    
+    function verificar() {
+        var txtn = document.querySelector('input#nacio')
+        var res = document.querySelector('div#res')
+        var nacio = String(txtn.value).toLowerCase().trim()
+
+        // Lista de formas que o usuário pode digitar
+        var brasileiros = ['brasil', 'brasileiro', 'brasileira', 'br']
+
+        if (brasileiros.includes(nacio)) {
+            res.innerHTML = `<p>Seu país é <strong>Brasil</strong></p>`
+            res.innerHTML += `<p>Você é <strong>BRASILEIRO(A)</strong></p>`
+        } else {
+            res.innerHTML = `<p>Seu país é <strong>${nacio}</strong></p>`
+            res.innerHTML += `<p>Você é <strong>ESTRANGEIRO(A)</strong></p>`
+        }
+    }
+</script>
+
+    
+</body>
+</html>
